@@ -36,6 +36,41 @@ public class Problem3Test {
     public void testInOrderTraverse() {
         // homework
         // to verify inOrderTraverse(TreeNode<Integer> node)
+        TreeNode<Integer> tree = getLargeTree();
+        List<Integer> expected = new ArrayList<>();
+        int[] list = {10, 25, 30, 40, 45, 50, 60, 75, 80, 90, 100, 110};
+        for (int n : list) {
+            expected.add(n);
+        }
+        List<Integer> actual = inOrderTraverse(tree);
+        assertEquals(expected, actual);
+    }
+
+    //          50
+    //       /      \
+    //      25      75
+    //     / \      / \
+    //    10 40    60 90
+    //       / \     / \
+    //      30 45   80 100
+    //                   \
+    //                   110
+    private TreeNode<Integer> getLargeTree() {
+        TreeNode<Integer> root = new TreeNode<>(50);
+        root.left = new TreeNode<>(25);
+        root.left.left = new TreeNode<>(10);
+        root.left.right = new TreeNode<>(40);
+        root.left.right.left = new TreeNode<>(30);
+        root.left.right.right = new TreeNode<>(45);
+
+        root.right = new TreeNode<>(75);
+        root.right.left = new TreeNode<>(60);
+        root.right.right = new TreeNode<>(90);
+        root.right.right.left = new TreeNode<>(80);
+        root.right.right.right = new TreeNode<>(100);
+        root.right.right.right.right = new TreeNode<>(110);
+
+        return root;
     }
 
     private static List<Integer> inOrderTraverse(TreeNode<Integer> node) {
