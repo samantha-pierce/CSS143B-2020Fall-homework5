@@ -182,7 +182,7 @@ public class Problem3Test {
         // homework
         // what problem can you see for insertInBst from this test case?
         // answer: With this test case when the nodes are inserted, they are all inserted
-        // to the left, so with all values inserted there would just be a straight line
+        // to the right, so with all values inserted there would just be a straight line
         // from 1 to 5.
         // discuss how you would solve it in a comment below
         // answer: To solve this, it would be better to start with the middle value
